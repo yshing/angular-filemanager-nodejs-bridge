@@ -134,7 +134,7 @@ routes.post('/remove', upload.any(), function (req, res, next) {
 
   var i = filePaths.length;
   filePaths.forEach(function (path){
-    fs.unlink(path,function (err){
+    fs.remove(path,function (err){
       i -= 1;
       if (err){
         res.status(500);
