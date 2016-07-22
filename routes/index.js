@@ -300,7 +300,7 @@ routes.post('/edit', function (req, res, next) {
   var promise;
 
   if (req.body.content){
-    promise = fs.writeFileAsync(filePath, req.content , 'utf8');
+    promise = fs.writeFileAsync(filePath, req.body.content , 'utf8');
   } else {
     res.status(400);
     return res.send({
